@@ -21,7 +21,7 @@ public class SkillListFragment extends ListFragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.skill_list_fragment, container, false);
-        String[] listcontents = new String[] {"one", "two", "three"};
+        String[] listcontents = new String[] {"one", "two", "three", "thre1e", "three2", "th3ree", "t4ree", "th5ree", "thr6ee", "thre7e", "thr8ee", "t9hree"};
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), R.layout.skill_list_item, listcontents);
         setListAdapter(arrayAdapter);
         return rootView;
