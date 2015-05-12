@@ -2,4 +2,11 @@
     <string name="app_name">MasterProgress</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+
+
+
+    <!--EnterTime Dialog-->
+    <string name="alert_enterTime_PositiveButton">Confirm</string>
+    <string name="alert_enterTime_NegativeButton">Cancel</string>
 </resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="fragmentMain_background">#009688</color>
+    <color name="listView_container">#212121</color>
+    <color name="listView">#4DB6AC</color>
+    <color name="listView_text">#212121</color>
+
+
+    <!--EnterTime dialog-->
+    <color name="alert_enterTime_header">#283593</color>
+    <color name="enterTime_button_h">#304FFE</color>
+    <color name="enterTime_button_15m">#3D5AFE</color>
+    <color name="enterTime_button_10m">#536DFE</color>
+    <color name="enterTime_button_5m">#8C9EFF</color>
+
+
+
+
+</resources>
