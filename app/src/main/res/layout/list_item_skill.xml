@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/listItemSkill_background" android:layout_width="fill_parent"
+    android:layout_height="78dp">
+
+
+    <TextView
+        android:id="@+id/listItemSkill_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="Android Dev"
+        android:padding="8dp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/listItemSkill_title"
+        />
+
+    <LinearLayout
+        android:id="@+id/listItemSkill_buttonLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/selector_add_time_button"
+        android:padding="16dp">
+        <TextView
+            android:id="@+id/listItemSkill_buttonTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Add Time"
+            android:textColor="@color/listItemSkill_title"
+            android:paddingTop="5dp"
+            android:paddingRight="8dp"
+            />
+
+        <ImageButton
+            android:id="@+id/listItemSkill_buttonAddTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_plus_white"
+            android:background="@null"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

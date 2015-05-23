@@ -15,6 +15,13 @@
     <color name="enterTime_button_5m">#8C9EFF</color>
 
 
+    <!--List Item Skill-->
+    <color name="listItemSkill_background">#FF9800</color>
+    <color name="listItemSkill_title">#FFFFFF</color>
+    <color name="listItemSkill_button_pressedState">#FFA726</color>
+    <color name="listItemSkill_button_normalState">#FF9800</color>
 
+
+    <color name="alertEnterTime_skillTitle">#FFFFFF</color>
 
 </resources>

@@ -15,14 +15,12 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/listView_container">
+        android:background="@color/listView">
         <ListView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@color/listView"
             android:id="@+id/list"
-            android:layout_margin="32dp"
-            android:padding="18dp"
             />
     </LinearLayout>
 

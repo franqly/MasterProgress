@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.zip.Inflater;
 
 
@@ -44,7 +45,15 @@ public class MainActivity extends ActionBarActivity {
         //ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.skill_list_item, listcontents);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.skill_list_item, listcontents);
         ListView listView = (ListView)findViewById(R.id.list);
-        listView.setAdapter(arrayAdapter);
+
+        ArrayList<Skill> skillArrayList = new ArrayList<>();
+        skillArrayList.add(new Skill("Android Dev"));
+        skillArrayList.add(new Skill("Guitar"));
+        skillArrayList.add(new Skill("Swimming"));
+        SkillAdapter skillAdapter = new SkillAdapter(getApplicationContext(), this, skillArrayList);
+
+        listView.setAdapter(skillAdapter);
+        listView.setDividerHeight(0);
     }
 
 
@@ -69,32 +78,36 @@ public class MainActivity extends ActionBarActivity {
             case R.id.action_enterTime:
                 Log.d(TAG, "EnterTime");
                 //Show enterTime dialog
-                Dialog dialog = createEnterTimeDialog();
-                dialog.show();
+                //Dialog dialog = createEnterTimeDialog();
+                //dialog.show();
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private Dialog createEnterTimeDialog(){
+    public void showEnterTimeDialog(Skill skill){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         LayoutInflater inflater = getLayoutInflater();
 
 
         final View view = inflater.inflate(R.layout.alert_enter_time, null);
         final TextView textView_time = (TextView)view.findViewById(R.id.enterTime_time);
+        TextView title = (TextView)view.findViewById(R.id.alertEnterTime_skillTitle);
+        title.setText(skill.getTitle());
         final int[] timeSetInDialog = {0};
         Button button_h = (Button)view.findViewById(R.id.enterTime_button_h);
         button_h.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Button_H: onClick");
+                Log.d(TAG, "Button_H: onClick" + savedInt);
                 timeSetInDialog[0] += 60;
+                Log.d(TAG, "timesSetInDialog: " + timeSetInDialog[0]);
                 textView_time.setText(String.valueOf(timeSetInDialog[0]));
+                saveInt(timeSetInDialog[0]);
             }
         });
-
+        Log.d(TAG, "POST timesSetInDialog: " + timeSetInDialog[0]);
         int time = Integer.valueOf(textView_time.getText().toString());
 
         builder.setView(view)
@@ -102,7 +115,7 @@ public class MainActivity extends ActionBarActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         int result = Integer.valueOf(textView_time.getText().toString());
-                        saveInt(result);
+                        ((TextView)findViewById(R.id.textView)).setText(String.valueOf(savedInt));
                         Log.d(TAG, "EnterTime: Confirm");
                     }
                 })
@@ -115,7 +128,7 @@ public class MainActivity extends ActionBarActivity {
 
 
         Log.d(TAG, "Post: " + savedInt);
-        return builder.create();
+        builder.create().show();
     }
 
 
@@ -138,5 +151,9 @@ public class MainActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
+    }
+
+    public void hello(){
+
     }
 }
